@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get "/first_product", controller: "products", action: "first_product"
 
   get "/second_product", controller: "products", action: "second_product"
+
+  get "/one_product/:id" => "products#one_product"
 end

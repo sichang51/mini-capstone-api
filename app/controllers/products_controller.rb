@@ -61,14 +61,15 @@ class ProductsController < ApplicationController
     render template: "products/show"
   end
 
-  # def chomp
-  #   @product = Product.create(
-  #     product: params["product"],
-  #     name: params["name"],
-  #     price: params["price"],
-  #     description: params["description"],
-  #     image_url: params["image_url"],
-  #   )
-  #   render template: "products/show"
-  # end
+  def update
+    @product = Product.find_by(id: params["id"])
+    @product.update(
+      product: params["product"] || @product.product,
+      name: params["name"] || @product.name,
+      price: params["price"] || @product.price,
+      description: params["description"] || @product.description,
+      image_url: params["image_url"] || @product.image_url,
+    )
+    render template: "products/show"
+  end
 end

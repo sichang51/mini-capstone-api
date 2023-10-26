@@ -39,13 +39,24 @@ class ProductsController < ApplicationController
     render template: "products/show"
   end
 
+  # def create
+  #   @product = Product.create(
+  #     product: "Video Game",
+  #     name: "Star Wars Jedi: Fallen Order",
+  #     price: 70,
+  #     description: "Star Wars Jedi: Fallen Order is an action-adventure video game played from a third-person perspective. The player can use their lightsaber to strike at enemies, or block incoming attacks. Blocking an attack depletes a character's block meter, opening them up to attack when the meter hits zero.",
+  #     image_url: "https://static.wikia.nocookie.net/starwars/images/5/57/Fallen-Order-Box-Art.jpg/revision/latest?cb=20190607015712",
+  #   )
+  #   render template: "products/show"
+  # end
+
   def create
     @product = Product.create(
-      product: "Video Game",
-      name: "Star Wars Jedi: Fallen Order",
-      price: 70,
-      description: "Star Wars Jedi: Fallen Order is an action-adventure video game played from a third-person perspective. The player can use their lightsaber to strike at enemies, or block incoming attacks. Blocking an attack depletes a character's block meter, opening them up to attack when the meter hits zero.",
-      image_url: "https://static.wikia.nocookie.net/starwars/images/5/57/Fallen-Order-Box-Art.jpg/revision/latest?cb=20190607015712",
+      product: params["product"],
+      name: params["name"],
+      price: params["price"],
+      description: params["description"],
+      image_url: params["image_url"],
     )
     render template: "products/show"
   end

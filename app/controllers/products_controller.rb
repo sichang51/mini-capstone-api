@@ -60,4 +60,15 @@ class ProductsController < ApplicationController
     )
     render template: "products/show"
   end
+
+  # def chomp
+  #   @product = Product.create(
+  #     product: params["product"],
+  #     name: params["name"],
+  #     price: params["price"],
+  #     description: params["description"],
+  #     image_url: params["image_url"],
+  #   )
+  #   render template: "products/show"
+  # end
 end

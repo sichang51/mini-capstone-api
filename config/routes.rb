@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   get "/products/:id" => "products#show"
 
   post "/products.json" => "products#create"
+
+  get "/products/chomp" => "producst#create"
 end

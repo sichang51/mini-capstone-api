@@ -68,5 +68,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-
 end
+
+# allows to configure different domains to make web requests to our backend api.
+gem "rack-cors"

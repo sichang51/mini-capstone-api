@@ -30,8 +30,8 @@ class ProductsController < ApplicationController
   # end
 
   def index
-    product = Product.all
-    render json: product.as_json
+    @products = Product.all
+    render template: "products/index"
   end
 
   def show

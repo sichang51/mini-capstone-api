@@ -62,6 +62,7 @@ class ProductsController < ApplicationController
     # happy path - things saved successfullly!
     if @product.valid?
       render template: "products/show"
+      # render :show
       # sad path - didn't save, we render errors
     else
       render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
@@ -79,7 +80,11 @@ class ProductsController < ApplicationController
       image_url: params["image_url"] || @product.image_url,
       inventory: params["inventory"] || @product.inventory,
     )
-    render template: "products/show"
+    if @product.valid?
+      render template: "products/show"
+    else
+      render json: { errors: @product.errors.full_messages }, status: 422
+    end
   end
 
   def destroy
@@ -88,3 +93,7 @@ class ProductsController < ApplicationController
     render json: product.as_json
   end
 end
+
+# Add an if / else condition to your controller create action to deal with happy / sad paths for Create and Update actions
+# add in tests to products_controller_test for create and update
+# check products.yml and make sure data is passes validations

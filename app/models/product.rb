@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   validates :description, presence: true
   # validates :description, length: { minimum: 10, maximum: 500 }
   validates :description, length: { in: 10..500 }
-  # validates :image_url, format: { with: jpg, png, jpeg, psd, message: "only allows specific formats" }
+  validates_format_of :image_url, :with => %r{\.(jpg|png|jpeg)$}i, :message => "only allows specific formats", multiline: true
 
   def is_discounted?
     if price <= 10

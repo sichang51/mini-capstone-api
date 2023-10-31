@@ -1,15 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  product: MyString
-  name: MyString
+  product: apple
+  name: apple
   price: 1
-  description: MyString
-  image_url: MyString
+  description: this is an apple
+  image_url: test.jpg
 
 two:
-  product: MyString
-  name: MyString
+  product: orange
+  name: orange
   price: 1
-  description: MyString
-  image_url: MyString
+  description: this is an orange
+  image_url: test.png
+# make sure that description is above validation and image_url is the allowed format

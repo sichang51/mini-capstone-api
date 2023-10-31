@@ -17,3 +17,5 @@ Product.create(product: "Video Game", name: "Call of Duty: Modern Warfare 2", pr
 Product.create(product: "Video Game Accessories", name: "Xbox Series X Controller", price: 50, description: "For Xbox Series X|S, we’ve streamlined the Xbox Wireless Controller for comfort, performance, and instant sharing. The controller also works great with Xbox One, Windows 10/11, and cloud gaming devices.", image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyv-hCdwKL3Ba0OK90FscfQgxJM5Mn2tkVxg&usqp=CAU")
 
 Product.create(product: "Video Game Accessories", name: "PS5 Controller", price: 70, description: "The DualSense wireless controller offers immersive haptic feedback, dynamic adaptive triggers and a built-in microphone, all integrated into an iconic comfortable design. Compared to DUALSHOCK 4 wireless controller. Available when feature is supported by game.", image_url: "https://images.immediate.co.uk/production/volatile/sites/3/2022/09/PS5-Edge-Controller-release-date-0a95b5e.jpg?resize=768,574")
+
+# Product.create! - the exclamation point enables the error message for validation

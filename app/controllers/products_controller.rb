@@ -59,7 +59,14 @@ class ProductsController < ApplicationController
       image_url: params["image_url"],
       inventory: params["inventory"],
     )
-    render template: "products/show"
+    # happy path - things saved successfullly!
+    if @product.valid?
+      render template: "products/show"
+      # sad path - didn't save, we render errors
+    else
+      render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
+      # or status: 422
+    end
   end
 
   def update

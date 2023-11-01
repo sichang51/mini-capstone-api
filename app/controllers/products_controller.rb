@@ -58,6 +58,7 @@ class ProductsController < ApplicationController
       description: params["description"],
       image_url: params["image_url"],
       inventory: params["inventory"],
+      supplier_id: params[:supplier_id],
     )
     # happy path - things saved successfullly!
     if @product.valid?
@@ -97,50 +98,3 @@ end
 # Add an if / else condition to your controller create action to deal with happy / sad paths for Create and Update actions
 # add in tests to products_controller_test for create and update
 # check products.yml and make sure data is passes validations
-
-def index
-  @suppliers = Supplier.all
-  render template: "suppliers/index"
-end
-
-def show
-  @supplier = Supplier.find_by(id: params["id"])
-  render template: "suppliers/show"
-end
-
-def create
-  @supplier = Supplier.create(
-    name: params["name"],
-    email: params["email"],
-    phone_number: params["phone_number"],
-  )
-  # happy path - things saved successfullly!
-  if @supplier.valid?
-    render template: "suppliers/show"
-    # render :show
-    # sad path - didn't save, we render errors
-  else
-    render json: { errors: @supplier.errors.full_messages }, status: :unprocessable_entity
-    # or status: 422
-  end
-end
-
-def update
-  @supplier = Supplier.find_by(id: params["id"])
-  @supplier.update(
-    name: params["name"] || @supplier.name,
-    email: params["email"] || @supplier.email,
-    phone_number: params["phone_number"] || @product.phone_number,
-  )
-  if @supplier.valid?
-    render template: "suppliers/show"
-  else
-    render json: { errors: @supplier.errors.full_messages }, status: 422
-  end
-
-  def destroy
-    supplier = Supplier.find_by(id: params["id"])
-    supplier.destroy
-    render json: supplier.as_json
-  end
-end

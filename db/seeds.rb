@@ -26,4 +26,4 @@
 
 # Supplier.create(name: "Activision", email: "abc@activision.com", phone_number: "888-888-8888")
 
-Supplier.create(name: "Electronic Arts", email: "123@ea.com", phone_number: "800-800-8000")
+# Supplier.create(name: "Electronic Arts", email: "123@ea.com", phone_number: "800-800-8000")

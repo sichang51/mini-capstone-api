@@ -3,9 +3,11 @@ class Product < ApplicationRecord
   validates :name, uniqueness: true
   # validates :price, presence: true
   # validates :price, numericality: { greater_than: 0 }
+  # below shows the combined validation of presence and numericality
   validates :price, presence: true, numericality: { greater_than: 0 }
   validates :description, presence: true
   # validates :description, length: { minimum: 10, maximum: 500 }
+  # below shows the more commonly used validation
   validates :description, length: { in: 10..500 }
   validates_format_of :image_url, :with => %r{\.(jpg|png|jpeg)$}i, :message => "only allows specific formats", multiline: true
 

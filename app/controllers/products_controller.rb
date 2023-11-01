@@ -56,7 +56,6 @@ class ProductsController < ApplicationController
       name: params["name"],
       price: params["price"],
       description: params["description"],
-      image_url: params["image_url"],
       inventory: params["inventory"],
       supplier_id: params[:supplier_id],
     )
@@ -78,7 +77,6 @@ class ProductsController < ApplicationController
       name: params["name"] || @product.name,
       price: params["price"] || @product.price,
       description: params["description"] || @product.description,
-      image_url: params["image_url"] || @product.image_url,
       inventory: params["inventory"] || @product.inventory,
     )
     if @product.valid?

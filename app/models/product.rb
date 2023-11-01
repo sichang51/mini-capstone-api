@@ -20,6 +20,7 @@ class Product < ApplicationRecord
 
   # shortcut to the above
   belongs_to :supplier
+  has_many :images
 
   def is_discounted?
     if price <= 10

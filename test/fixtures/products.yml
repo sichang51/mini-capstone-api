@@ -5,7 +5,6 @@ one:
   name: MyString
   price: 1
   description: this is an apple
-  image_url: test.jpg
   supplier: one
 
 two:
@@ -13,6 +12,5 @@ two:
   name: MyString
   price: 1
   description: this is an orange
-  image_url: test.png
   supplier: one
 # make sure that description is above validation and image_url is the allowed format

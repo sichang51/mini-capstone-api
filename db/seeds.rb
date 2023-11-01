@@ -28,14 +28,18 @@
 
 # Supplier.create(name: "Electronic Arts", email: "123@ea.com", phone_number: "800-800-8000")
 
-Image.create(url: "https://assets1.ignimgs.com/2020/09/09/xboxseriesx-1-blogroll-1599646330013_160w.jpg?width=1280")
+# Image.create(url: "https://assets1.ignimgs.com/2020/09/09/xboxseriesx-1-blogroll-1599646330013_160w.jpg?width=1280")
 
-Image.create(url: "https://assets-prd.ignimgs.com/2023/08/04/ps5-discounted-this-sunday-august-6-2023-1691146478074.png")
+# Image.create(url: "https://assets-prd.ignimgs.com/2023/08/04/ps5-discounted-this-sunday-august-6-2023-1691146478074.png")
 
-Image.create(url: "https://upload.wikimedia.org/wikipedia/en/b/b0/Madden_NFL_24_Cover.jpeg")
+# Image.create(url: "https://upload.wikimedia.org/wikipedia/en/b/b0/Madden_NFL_24_Cover.jpeg")
 
-Image.create(url: "https://assets-prd.ignimgs.com/2022/05/24/call-of-duty-modern-warfare-2-button-02-1653417394041.jpg")
+# Image.create(url: "https://assets-prd.ignimgs.com/2022/05/24/call-of-duty-modern-warfare-2-button-02-1653417394041.jpg")
 
-Image.create(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyv-hCdwKL3Ba0OK90FscfQgxJM5Mn2tkVxg&usqp=CAU")
+# Image.create(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyv-hCdwKL3Ba0OK90FscfQgxJM5Mn2tkVxg&usqp=CAU")
 
-Image.create(url: "https://images.immediate.co.uk/production/volatile/sites/3/2022/09/PS5-Edge-Controller-release-date-0a95b5e.jpg?resize=768,574")
+# Image.create(url: "https://images.immediate.co.uk/production/volatile/sites/3/2022/09/PS5-Edge-Controller-release-date-0a95b5e.jpg?resize=768,574")
+
+Image.create(url: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4mRni?ver=a707")
+
+Image.create(url: "https://emulation.gametechwiki.com/images/thumb/6/64/Ps5.png/900px-Ps5.png")

@@ -72,3 +72,5 @@ end
 
 # allows to configure different domains to make web requests to our backend api.
 gem "rack-cors"
+
+gem "seed_dump"

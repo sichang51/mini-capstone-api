@@ -1,8 +1,5 @@
 require "http"
 
-puts "Enter what type of product within Video Game Category:"
-product_type = gets.chomp
-
 puts "Enter the product name:"
 product_name = gets.chomp
 

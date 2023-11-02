@@ -52,7 +52,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.create(
-      product: params["product"],
       name: params["name"],
       price: params["price"],
       description: params["description"],
@@ -74,7 +73,6 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find_by(id: params["id"])
     @product.update(
-      product: params["product"] || @product.product,
       name: params["name"] || @product.name,
       price: params["price"] || @product.price,
       description: params["description"] || @product.description,

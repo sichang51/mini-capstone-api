@@ -6,40 +6,40 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Product.create(product: "Video Game Console", name: "Xbox Series X", price: 560, description: "Xbox Series X, the fastest, most powerful Xbox ever. Explore rich new worlds with 12 teraflops of raw graphic processing power, DirectX ray tracing, a custom SSD, and 4K gaming. Make the most of every gaming minute with Quick Resume, lightning-fast load times, and gameplay of up to 120 FPS—all powered by Xbox Velocity Architecture. Enjoy thousands of games from four generations of Xbox, with hundreds of optimized titles that look and play better than ever. Get the most out of your Xbox Series X with Xbox Game Pass Ultimate (membership sold separately) and be the first to play new games like Starfield and Forza Motorsport on day one. Plus, enjoy hundreds of games like Minecraft Legends, Halo Infinite, and Forza Horizon 5 with friends on console, PC, and cloud. With games added all the time, there’s always something new to play.")
+supplier1 = Supplier.create!(name: "Microsoft", email: "abc123@microsoft.com", phone_number: "111-222-3333")
 
-Product.create(product: "Video Game Console", name: "Playstation 5", price: 500, description: "Powered by an eight-core AMD Zen 2 CPU and custom AMD Radeon GPU, the PS5 is offered in two models: with and without a 4K Blu-ray drive. Supporting a 120Hz video refresh, the PS5 is considerably more powerful than the PS4 and PS4 Pro. Rather than GDDR5 memory, GDDR6 is supported with capacity doubled from 8 to 16GB.")
+supplier2 = Supplier.create!(name: "Sony", email: "555@sony.com", phone_number: "555-555-5555")
 
-Product.create(product: "Video Game", name: "Madden NFL 2024", price: 70, description: "Madden NFL 24 introduces exclusive next gen features, including SAPIEN technology, which allows for more realistic movement and more lifelike player models. Gameplay includes the return of refs to the field, improved blocking and Fieldsense.")
+supplier3 = Supplier.create!(name: "Activision", email: "abc@activision.com", phone_number: "888-888-8888")
 
-Product.create(product: "Video Game", name: "Call of Duty: Modern Warfare 2", price: 70, description: "Call of Duty: Modern Warfare 2 is a first person shooter, and its gameplay revolves around fast-paced gunfights against enemy combatants. The player controls a soldier who can perform several actions, including jump, sprint, crouch, lay prone, and aim down their gun's iron sights.")
+supplier4 = Supplier.create!(name: "Electronic Arts", email: "123@ea.com", phone_number: "800-800-8000")
 
-Product.create(product: "Video Game Accessories", name: "Xbox Series X Controller", price: 50, description: "For Xbox Series X|S, we’ve streamlined the Xbox Wireless Controller for comfort, performance, and instant sharing. The controller also works great with Xbox One, Windows 10/11, and cloud gaming devices.")
+product1 = Product.create!(name: "Xbox Series X", price: 560, description: "Xbox Series X, the fastest, most powerful Xbox ever. Explore rich new worlds with 12 teraflops of raw graphic processing power, DirectX ray tracing, a custom SSD, and 4K gaming. Make the most of every gaming minute with Quick Resume, lightning-fast load times, and gameplay of up to 120 FPS—all powered by Xbox Velocity Architecture.", supplier_id: supplier1.id)
 
-Product.create(product: "Video Game Accessories", name: "PS5 Controller", price: 70, description: "The DualSense wireless controller offers immersive haptic feedback, dynamic adaptive triggers and a built-in microphone, all integrated into an iconic comfortable design. Compared to DUALSHOCK 4 wireless controller. Available when feature is supported by game.")
+product2 = Product.create!(name: "Playstation 5", price: 500, description: "Powered by an eight-core AMD Zen 2 CPU and custom AMD Radeon GPU, the PS5 is offered in two models: with and without a 4K Blu-ray drive. Supporting a 120Hz video refresh, the PS5 is considerably more powerful than the PS4 and PS4 Pro. Rather than GDDR5 memory, GDDR6 is supported with capacity doubled from 8 to 16GB.", supplier_id: supplier2.id)
+
+product3 = Product.create!(name: "Madden NFL 2024", price: 70, description: "Madden NFL 24 introduces exclusive next gen features, including SAPIEN technology, which allows for more realistic movement and more lifelike player models. Gameplay includes the return of refs to the field, improved blocking and Fieldsense.", supplier_id: supplier4.id)
+
+product4 = Product.create!(name: "Call of Duty: Modern Warfare 2", price: 70, description: "Call of Duty: Modern Warfare 2 is a first person shooter, and its gameplay revolves around fast-paced gunfights against enemy combatants. The player controls a soldier who can perform several actions, including jump, sprint, crouch, lay prone, and aim down their gun's iron sights.", supplier_id: supplier3.id)
+
+product5 = Product.create!(name: "Xbox Series X Controller", price: 50, description: "For Xbox Series X|S, we’ve streamlined the Xbox Wireless Controller for comfort, performance, and instant sharing. The controller also works great with Xbox One, Windows 10/11, and cloud gaming devices.", supplier_id: supplier1.id)
+
+product6 = Product.create!(name: "PS5 Controller", price: 70, description: "The DualSense wireless controller offers immersive haptic feedback, dynamic adaptive triggers and a built-in microphone, all integrated into an iconic comfortable design. Compared to DUALSHOCK 4 wireless controller. Available when feature is supported by game.", supplier_id: supplier2.id)
 
 # Product.create! - the exclamation point enables the error message for validation
 
-Supplier.create(name: "Microsoft", email: "abc123@microsoft.com", phone_number: "111-222-3333")
+Image.create!(url: "https://i5.walmartimages.com/seo/Xbox-Series-X-Video-Game-Console-Black_9f8c06f5-7953-426d-9b68-ab914839cef4.5f15be430800ce4d7c3bb5694d4ab798.jpeg", product_id: product1.id)
 
-Supplier.create(name: "Sony", email: "555@sony.com", phone_number: "555-555-5555")
+Image.create!(url: "https://assets-prd.ignimgs.com/2023/08/04/ps5-discounted-this-sunday-august-6-2023-1691146478074.png", product_id: product2.id)
 
-Supplier.create(name: "Activision", email: "abc@activision.com", phone_number: "888-888-8888")
+Image.create!(url: "https://upload.wikimedia.org/wikipedia/en/b/b0/Madden_NFL_24_Cover.jpeg", product_id: product3.id)
 
-Supplier.create(name: "Electronic Arts", email: "123@ea.com", phone_number: "800-800-8000")
+Image.create!(url: "https://assets-prd.ignimgs.com/2022/05/24/call-of-duty-modern-warfare-2-button-02-1653417394041.jpg", product_id: product4.id)
 
-Image.create(url: "https://assets1.ignimgs.com/2020/09/09/xboxseriesx-1-blogroll-1599646330013_160w.jpg?width=1280")
+Image.create!(url: "https://m.media-amazon.com/images/I/71y1VUWBUtS.jpg", product_id: product5.id)
 
-Image.create(url: "https://assets-prd.ignimgs.com/2023/08/04/ps5-discounted-this-sunday-august-6-2023-1691146478074.png")
+Image.create!(url: "https://images.immediate.co.uk/production/volatile/sites/3/2022/09/PS5-Edge-Controller-release-date-0a95b5e.jpg?resize=768,574", product_id: product6)
 
-Image.create(url: "https://upload.wikimedia.org/wikipedia/en/b/b0/Madden_NFL_24_Cover.jpeg")
+Image.create!(url: "https://assets.xboxservices.com/assets/12/7e/127e5830-82cb-4f6c-beef-4f9a0c970430.jpg?n=Consoles-Hub_Content-Placement_Hub-SX_788x444.jpg", product_id: product1.id)
 
-Image.create(url: "https://assets-prd.ignimgs.com/2022/05/24/call-of-duty-modern-warfare-2-button-02-1653417394041.jpg")
-
-Image.create(url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyv-hCdwKL3Ba0OK90FscfQgxJM5Mn2tkVxg&usqp=CAU")
-
-Image.create(url: "https://images.immediate.co.uk/production/volatile/sites/3/2022/09/PS5-Edge-Controller-release-date-0a95b5e.jpg?resize=768,574")
-
-Image.create(url: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4mRni?ver=a707")
-
-Image.create(url: "https://emulation.gametechwiki.com/images/thumb/6/64/Ps5.png/900px-Ps5.png")
+Image.create(url: "https://emulation.gametechwiki.com/images/thumb/6/64/Ps5.png/900px-Ps5.png", product_id: product2.id)

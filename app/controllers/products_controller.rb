@@ -61,8 +61,9 @@ class ProductsController < ApplicationController
     )
     # happy path - things saved successfullly!
     if @product.valid?
-      render template: "products/show"
-      # render :show
+      Image.create(url: params[:image_url], product_id: @product.id)
+      # render template: "products/show"
+      render :show
       # sad path - didn't save, we render errors
     else
       render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity

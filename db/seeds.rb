@@ -38,7 +38,7 @@ Image.create!(url: "https://assets-prd.ignimgs.com/2022/05/24/call-of-duty-moder
 
 Image.create!(url: "https://m.media-amazon.com/images/I/71y1VUWBUtS.jpg", product_id: product5.id)
 
-Image.create!(url: "https://images.immediate.co.uk/production/volatile/sites/3/2022/09/PS5-Edge-Controller-release-date-0a95b5e.jpg?resize=768,574", product_id: product6)
+Image.create!(url: "https://i.ebayimg.com/images/g/2BMAAOSwN~VkwYmb/s-l1600.jpg", product_id: product6)
 
 Image.create!(url: "https://assets.xboxservices.com/assets/12/7e/127e5830-82cb-4f6c-beef-4f9a0c970430.jpg?n=Consoles-Hub_Content-Placement_Hub-SX_788x444.jpg", product_id: product1.id)
 

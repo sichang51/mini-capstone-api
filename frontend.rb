@@ -20,6 +20,6 @@ product_description = gets.chomp
 #   product_image_url: image_url,
 # }
 
-HTTP.post("http://localhost:3000/products.json", :form => { product: product_type, name: product_name, price: product_price, description: product_description })
+HTTP.post("http://localhost:3000/products.json", :form => { name: product_name, price: product_price, description: product_description })
 
 # , image_url: product_image_url

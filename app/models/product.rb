@@ -8,7 +8,7 @@ class Product < ApplicationRecord
   validates :description, presence: true
   # validates :description, length: { minimum: 10, maximum: 500 }
   # below shows the more commonly used validation
-  validates :description, length: { in: 10..500 }
+  validates :description, length: { in: 10..1000 }
 
   #commented out the image_url reference since we're building out an image table - keeping the code for reference
   # validates_format_of :image_url, :with => %r{\.(jpg|png|jpeg)$}i, :message => "only allows specific formats", multiline: true

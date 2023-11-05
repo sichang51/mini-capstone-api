@@ -38,7 +38,7 @@ Image.create!(url: "https://www.movieposters.com/cdn/shop/products/7ef5f3a2970c9
 
 Image.create!(url: "https://m.media-amazon.com/images/I/91m0gkJXP5L._AC_UF894,1000_QL80_.jpg", product_id: product5.id)
 
-Image.create!(url: "https://theliteraryomnivore.files.wordpress.com/2010/05/lotrtrilogyface.jpg?w=676", product_id: product6)
+Image.create!(url: "https://theliteraryomnivore.files.wordpress.com/2010/05/lotrtrilogyface.jpg?w=676", product_id: product6.id)
 
 Image.create!(url: "https://cdn11.bigcommerce.com/s-lj8wphc2lt/products/0/images/1646/godfather-cover__18165.1669740310.1280.1280.jpg?c=2&_gl=1*13qsnbk*_ga*MTczNDMyMDMwNi4xNjY4NDU2ODA4*_ga_WS2VZYPC6G*MTY2OTczNzYxNC44LjEuMTY2OTc0MDMzOS40MS4wLjA.", product_id: product1.id)
 

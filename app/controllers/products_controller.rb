@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
   # end
 
   def index
-    pp current_user
+    # pp current_user
     @products = Product.all
     render template: "products/index"
   end
@@ -59,6 +59,7 @@ class ProductsController < ApplicationController
       inventory: params["inventory"],
       supplier_id: params[:supplier_id],
     )
+
     # happy path - things saved successfullly!
     if @product.valid?
       Image.create(url: params[:image_url], product_id: @product.id)

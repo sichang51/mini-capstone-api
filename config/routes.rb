@@ -34,5 +34,6 @@ Rails.application.routes.draw do
   delete "/suppliers/:id" => "suppliers#destroy"
 
   # users table
-  post "/users" => "users#create"
+  post "/users" => "users#create"           #signup
+  post "/sessions" => "sessions#create"     #login
 end

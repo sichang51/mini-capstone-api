@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   # get "/one_product/:id" => "products#one_product"
 
+  # for Products table
   get "/products" => "products#index"
 
   get "/products/:id" => "products#show"
@@ -31,4 +32,7 @@ Rails.application.routes.draw do
   patch "/suppliers/:id" => "suppliers#update"
 
   delete "/suppliers/:id" => "suppliers#destroy"
+
+  # users table
+  post "/users" => "users#create"
 end

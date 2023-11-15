@@ -19,4 +19,9 @@ class OrdersController < ApplicationController
     @order = Order.find_by(id: params["id"])
     render template: "orders/show"
   end
+
+  def index
+    @orders = Order.all
+    render template: "orders/index"
+  end
 end

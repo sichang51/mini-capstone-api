@@ -1,4 +1,5 @@
 json.id order.id
+json.user order.user
 json.quantity order.quantity
 json.subtotal order.subtotal
 json.tax order.tax

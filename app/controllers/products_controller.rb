@@ -35,11 +35,6 @@ class ProductsController < ApplicationController
     render template: "products/index"
   end
 
-  def show
-    @product = Product.find_by(id: params["id"])
-    render template: "products/show"
-  end
-
   # def create
   #   @product = Product.create(
   #     product: "Video Game",
@@ -70,6 +65,11 @@ class ProductsController < ApplicationController
       render json: { errors: @product.errors.full_messages }, status: :unprocessable_entity
       # or status: 422
     end
+  end
+
+  def show
+    @product = Product.find_by(id: params["id"])
+    render template: "products/show"
   end
 
   def update

@@ -14,30 +14,22 @@ Rails.application.routes.draw do
 
   # for Products table
   get "/products" => "products#index"
-
-  get "/products/:id" => "products#show"
-
   post "/products.json" => "products#create"
-
+  get "/products/:id" => "products#show"
   patch "/products/:id" => "products#update"
-
   delete "/products/:id" => "products#destroy"
 
+  # suppliers
   get "/suppliers" => "suppliers#index"
-
-  get "/suppliers/:id" => "suppliers#show"
-
   post "/suppliers.json" => "suppliers#create"
-
+  get "/suppliers/:id" => "suppliers#show"
   patch "/suppliers/:id" => "suppliers#update"
-
   delete "/suppliers/:id" => "suppliers#destroy"
 
-  post "/orders" => "orders#create"
-
-  get "/orders/:id" => "orders#show"
-
+  # orders
   get "/orders" => "orders#index"
+  post "/orders" => "orders#create"
+  get "/orders/:id" => "orders#show"
 
   # users table
   post "/users" => "users#create"           #signup

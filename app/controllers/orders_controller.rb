@@ -14,4 +14,9 @@ class OrdersController < ApplicationController
       total: params[:total],
     )
   end
+
+  def show
+    @order = Order.find_by(id: params["id"])
+    render template: "orders/show"
+  end
 end

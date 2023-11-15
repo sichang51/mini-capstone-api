@@ -3,16 +3,17 @@ class OrdersController < ApplicationController
     @order = Order.create(
       user_id: current_user.id,
       product_id: params[:product_id],
-      name: params["name"],
-      price: params["price"],
-      description: params["description"],
-      inventory: params["inventory"],
-      supplier_id: params[:supplier_id],
+      # name: params["name"],
+      # price: params["price"],
+      # description: params["description"],
+      # inventory: params["inventory"],
+      # supplier_id: params[:supplier_id],
       quantity: params["quantity"],
       subtotal: params[:subtotal],
       tax: params[:tax],
       total: params[:total],
     )
+    render template: "orders/show"
   end
 
   def show
@@ -21,7 +22,7 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = Order.find_by(user_id: current_user.id)
+    @orders = current_user.orders
     render template: "orders/index"
   end
 end

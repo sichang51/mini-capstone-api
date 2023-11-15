@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   delete "/suppliers/:id" => "suppliers#destroy"
 
+  post "/orders" => "orders#create"
+
   # users table
   post "/users" => "users#create"           #signup
   post "/sessions" => "sessions#create"     #login

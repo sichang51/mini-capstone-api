@@ -16,12 +16,12 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find_by(id: params["id"])
+    @order = Order.find_by(user_id: current_user.id)
     render template: "orders/show"
   end
 
   def index
-    @orders = Order.all
+    @orders = Order.find_by(user_id: current_user.id)
     render template: "orders/index"
   end
 end

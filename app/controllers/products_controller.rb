@@ -29,6 +29,8 @@ class ProductsController < ApplicationController
   #   render template: "products/show"
   # end
 
+  before_action :authenticate_admin
+
   def index
     # pp current_user
     @products = Product.all

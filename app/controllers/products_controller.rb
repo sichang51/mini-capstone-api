@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
   #   render template: "products/show"
   # end
 
-  before_action :authenticate_admin
+  before_action :authenticate_admin, except: [:index, :show]
 
   def index
     # pp current_user

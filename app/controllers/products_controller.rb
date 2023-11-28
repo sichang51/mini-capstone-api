@@ -34,6 +34,12 @@ class ProductsController < ApplicationController
   def index
     # pp current_user
     @products = Product.all
+
+    if params[:category]
+      category = Category.find_by(name: params[:category])
+      @products = category.products
+    end
+
     render template: "products/index"
   end
 

@@ -9,7 +9,7 @@ class CartedProductsController < ApplicationController
     )
     #happy path
     if @carted_product.valid?
-      render template: "cart/show"
+      render :show
     else #sad path
       render json: { errors: @cart.errors.full_messages }, status: 422
     end

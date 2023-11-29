@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   post "/users" => "users#create"           #signup
   post "/sessions" => "sessions#create"     #login
 
-  # carts table
-  post "/cart" => "carted_products#create"
+  # carted_products table
+  get "/carted_products" => "carted_products#index"
+  post "/carted_products" => "carted_products#create"
+  
 end

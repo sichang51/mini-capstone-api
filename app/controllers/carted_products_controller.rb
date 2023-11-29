@@ -1,17 +1,23 @@
 class CartedProductsController < ApplicationController
+  def index
+    @carted_product = CartedProduct.all
+    render :index
+  end
+
   def create
     @carted_product = CartedProduct.create(
       user_id: current_user.id,
-      order_id: params[:order_id],
+      order_id: nil,
       product_id: params[:product_id],
-      quantity: params["quantity"],
-      status: params[:status],
+      quantity: params[:quantity],
+      status: "carted",
     )
+
     #happy path
     if @carted_product.valid?
       render :show
     else #sad path
-      render json: { errors: @cart.errors.full_messages }, status: 422
+      render json: { errors: @carted_product.errors.full_messages }, status: 422
     end
   end
 end

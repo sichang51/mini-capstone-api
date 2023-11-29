@@ -7,11 +7,13 @@ class OrdersController < ApplicationController
   end
 
   def create
-    product = Product.find_by(id: params[:product_id])
+    carted_products = current_user.carted_products.where(status: "carted")
 
-    carted_product = CartedProduct.find_by()
+    calculated_subtotal = 0
+    carted_products.each do |carted_product|
+      calculated_subtotal += carted_product.quantity * carted_product.product.price
+    end
 
-    calculated_subtotal = product.price * params[:quantity].to_i
     calculated_tax = calculated_subtotal * 0.09
     calculated_total = calculated_subtotal + calculated_tax
 
@@ -23,6 +25,7 @@ class OrdersController < ApplicationController
     )
     #happy path
     if @order.valid?
+      carted_products.update_all(status: "purchased", order_id: @order.id)
       render template: "orders/show"
     else #sad path
       render json: { errors: @order.errors.full_messages }, status: 422

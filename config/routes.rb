@@ -34,4 +34,7 @@ Rails.application.routes.draw do
   # users table
   post "/users" => "users#create"           #signup
   post "/sessions" => "sessions#create"     #login
+
+  # carts table
+  post "/cart" => "carted_products#create"
 end

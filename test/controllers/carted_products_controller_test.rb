@@ -1,10 +1,44 @@
 require "test_helper"
 
 class CartedProductsControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @user = User.create(name: "Test", email: "test@test.com", password: "password")
+    @supplier = Supplier.create(name: "Store", email: "store@test.com", phone_number: "3223232")
+    @product = Product.create(supplier_id: @supplier.id, name: "Item", price: 10, description: "this is an item")
+    @carted_product = CartedProduct.create(user_id: @user.id, product_id: @product.id, quantity: 2, status: "carted")
+    post "/sessions.json", params: { email: "test@test.com", password: "password" }
+    data = JSON.parse(response.body)
+    @jwt = data["jwt"]
+  end
+
+  test "index" do
+    get "/carted_products.json",
+      headers: { "Authorization" => "Bearer #{@jwt}" }
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal 1, data.length
+  end
+
   test "create" do
     assert_difference "carted_product.count", 1 do
-      post "/cart.json", params: { user_id: 1, product_id: 2, quantity: 5, status: "carted", order_id: 1 }
-      assert_response 201
+      post "/cart.json", params: { product_id: @product_id, quantity: 5 },
+                         headers: { "Authorization" => "Bearer #{@jwt}" }
+      assert_response 200
+
+      data = JSON.parse(response.body)
+      assert_equal "carted", data["status"]
+      assert_equal 2, data["quantity"]
     end
+  end
+
+  test "destroy" do
+    delete "/carted_products/#{@carted_product.id}.json",
+      headers: { "Authorization" => "Bearer #{@jwt}" }
+    assert_response 200
+
+    # "refreshes carted_product, i.e reloads it from the test db, with updated info"
+    @carted_product.reload
+    assert_equal "removed", @carted_product.status
   end
 end

@@ -20,4 +20,10 @@ class CartedProductsController < ApplicationController
       render json: { errors: @carted_product.errors.full_messages }, status: 422
     end
   end
+
+  def destroy
+    carted_product = current_user.carted_products.find_by(id: params[:id], status: "carted")
+    carted_product.update(status: "removed")
+    render json: { status: "Carted item removed" }
+  end
 end

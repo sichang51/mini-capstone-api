@@ -21,9 +21,10 @@ class CartedProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "create" do
-    assert_difference "carted_product.count", 1 do
-      post "/cart.json", params: { product_id: @product_id, quantity: 5 },
-                         headers: { "Authorization" => "Bearer #{@jwt}" }
+    assert_difference "CartedProduct.count", 1 do
+      post "/carted_products.json",
+           params: { product_id: @product.id, quantity: 2 },
+           headers: { "Authorization" => "Bearer #{@jwt}" }
       assert_response 200
 
       data = JSON.parse(response.body)
